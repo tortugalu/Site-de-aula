@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-    --primary-color: #D8B4FF; /* Lilás */
-    --secondary-color: #FADADD; /* Rosa */
+    --primary-color: #A2D2FF; /* Azul suave */
+    --secondary-color: #FADADD; /* Rosa suave */
     --accent-color: #FFD6D6; /* Rosa claro para bordas/detalhes */
-    --background-light: #FFF9E6; /* Amarelo pastel MAIS CLARO */
+    --background-light: #FFF9E6; /* Amarelo pastel MUITO CLARO */
     --card-bg: #FFFFFF;
     --text-color: #555555; /* Cinza suave para texto escuro */
     --light-text-color: #FFFFFF; /* Branco para texto claro */
-    --nav-bg: #D8B4FF; /* Lilás para a barra de navegação */
+
+    /* NOVAS CORES da barra de navegação */
+    --nav-bg: #CDBEFC; /* Lilás suave */
     --nav-text: #FFFFFF; /* Branco para o texto da navegação */
+    --cta-bg: #99C999; /* Verde pastel para o botão de CTA */
+
     --shadow-color: rgba(216, 180, 255, 0.5); /* Sombra lilás pastel */
     --dark-shadow-color: rgba(85, 85, 85, 0.1); /* Sombra cinza suave */
 }
@@ -60,8 +64,8 @@ body {
 }
 
 .cta-button {
-    background-color: #8FD88F;
-    color: var(--text-color);
+    background-color: var(--cta-bg);
+    color: var(--nav-text);
     padding: 10px 15px;
     border-radius: 20px;
     font-weight: 700;
@@ -72,10 +76,112 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #72C772;
+    background-color: #83b683;
 }
 
-/* Conteúdo Principal e Cards */
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.btn-cta {
+    background-color: var(--background-light);
+    color: var(--text-color);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* "Como Funciona" Section */
+.how-it-works-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.how-it-works-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.hiw-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px var(--shadow-color);
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.hiw-card:hover {
+    transform: translateY(-5px);
+}
+
+.hiw-icon {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: var(--secondary-color);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px var(--shadow-color);
+    max-width: 300px;
+    font-style: italic;
+    color: var(--text-color);
+}
+
+.testimonial-card span {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.section-header h3 {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+/* Existing card styles */
 main {
     padding: 50px 20px;
     display: flex;
@@ -264,5 +370,13 @@ footer {
     }
     main {
         padding: 30px 10px;
+    }
+    .hero-content h2 {
+        font-size: 1.8em;
+    }
+    .how-it-works-cards,
+    .testimonials-container {
+        flex-direction: column;
+        align-items: center;
     }
 }

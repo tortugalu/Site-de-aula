@@ -9,7 +9,7 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-            <h1>Aula particular de espanhol</h1>
+            <h1>Aulas de espanhol particular</h1>
         </div>
         <div class="nav-links">
             <a href="#" class="nav-item" id="open-login-modal">Área do Aluno</a>
@@ -22,6 +22,57 @@
     </nav>
 
     <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Aprenda Espanhol de Forma Divertida e Prática.</h2>
+                <a href="#" id="open-login-modal-hero" class="btn-cta">Comece Agora!</a>
+            </div>
+        </section>
+
+        <section class="how-it-works-section">
+            <div class="section-header">
+                <h3>Como Funciona</h3>
+                <p>Nossa metodologia é simples, dinâmica e adaptada para você.</p>
+            </div>
+            <div class="how-it-works-cards">
+                <div class="hiw-card">
+                    <i class="fas fa-chalkboard-teacher hiw-icon"></i>
+                    <h4>Aulas Personalizadas</h4>
+                    <p>Conteúdo feito sob medida para seus objetivos e estilo de aprendizado.</p>
+                </div>
+                <div class="hiw-card">
+                    <i class="fas fa-headset hiw-icon"></i>
+                    <h4>Foco na Conversação</h4>
+                    <p>Pratique a língua de forma real, com exercícios e diálogos que funcionam.</p>
+                </div>
+                <div class="hiw-card">
+                    <i class="fas fa-globe-americas hiw-icon"></i>
+                    <h4>Cultura e Interação</h4>
+                    <p>Aprenda a língua e mergulhe na rica cultura dos países hispânicos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="section-header">
+                <h3>O que nossos alunos dizem</h3>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <p>"As aulas da Luana são incríveis! Em pouco tempo já me sinto confiante para conversar."</p>
+                    <span>- Maria L.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"A metodologia é leve e divertida, aprendi muito mais do que imaginava!"</p>
+                    <span>- João P.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"O foco na cultura torna o aprendizado muito mais interessante. Recomendo!"</p>
+                    <span>- Ana C.</span>
+                </div>
+            </div>
+        </section>
+
         <div class="card">
             <h2>Pronto para começar?</h2>
             <p>Explore as aulas e pratique com nossos exercícios interativos. Ensinar espanhol é minha paixão. Com 7 anos de experiência, vejo como a língua pode transformar vidas e modificou a minha. O que me motiva é ver meus alunos ganhando confiança e se apaixonando pelo idioma.</p>
@@ -74,15 +125,19 @@
             bioModal.style.display = 'none';
         });
         
-        // Lógica para abrir e fechar o NOVO modal de login
-        const openLoginModalBtn = document.getElementById('open-login-modal');
+        // Lógica para abrir e fechar o NOVO modal de login (via botão na nav e no hero)
+        const openLoginModalBtnNav = document.getElementById('open-login-modal');
+        const openLoginModalBtnHero = document.getElementById('open-login-modal-hero');
         const loginModal = document.getElementById('login-modal');
         const closeLoginBtn = loginModal.querySelector('.close-btn');
 
-        openLoginModalBtn.addEventListener('click', (e) => {
+        const openLoginModal = (e) => {
             e.preventDefault();
             loginModal.style.display = 'flex';
-        });
+        };
+
+        openLoginModalBtnNav.addEventListener('click', openLoginModal);
+        openLoginModalBtnHero.addEventListener('click', openLoginModal);
 
         closeLoginBtn.addEventListener('click', () => {
             loginModal.style.display = 'none';
