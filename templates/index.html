@@ -1,157 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Aulas de Espanhol | Luana Pereira</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Aulas de Espanhol | Luana Pereira</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <h1>Aulas de espanhol particular</h1>
-        </div>
-        <div class="nav-links">
-            <a href="#" class="nav-item" id="open-login-modal">Área do Aluno</a>
-            <a href="/metodologia" class="nav-item">Metodologia</a>
-            <a href="#" class="nav-item" id="open-bio-modal">Professora Luana</a>
-            <a href="https://wa.me/SEU_NUMERO_AQUI" target="_blank" class="nav-item cta-button">
-                <i class="fab fa-whatsapp"></i> FALE COMIGO!
-            </a>
-        </div>
-    </nav>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Luana Pereira</h1>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-item" id="open-registration-modal-nav">Área do Aluno</a>
+            <a href="/metodologia" class="nav-item">Metodologia</a>
+            <a href="#" class="nav-item" id="open-bio-modal">Professora Luana</a>
+            <a href="https://wa.me/SEU_NUMERO_AQUI" target="_blank" class="nav-item cta-button">
+                <i class="fab fa-whatsapp"></i> FALE COMIGO!
+            </a>
+        </div>
+    </nav>
 
-    <main>
-        <section class="hero-section">
-            <div class="hero-content">
-                <h2>Aprenda Espanhol de Forma Divertida e Prática.</h2>
-                <a href="#" id="open-login-modal-hero" class="btn-cta">Comece Agora!</a>
-            </div>
-        </section>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Aprenda Espanhol de Forma Divertida e Prática.</h2>
+                <a href="#" id="open-registration-modal-hero" class="btn-cta">Comece Agora!</a>
+            </div>
+        </section>
 
-        <section class="how-it-works-section">
-            <div class="section-header">
-                <h3>Como Funciona</h3>
-                <p>Nossa metodologia é simples, dinâmica e adaptada para você.</p>
-            </div>
-            <div class="how-it-works-cards">
-                <div class="hiw-card">
-                    <i class="fas fa-chalkboard-teacher hiw-icon"></i>
-                    <h4>Aulas Personalizadas</h4>
-                    <p>Conteúdo feito sob medida para seus objetivos e estilo de aprendizado.</p>
-                </div>
-                <div class="hiw-card">
-                    <i class="fas fa-headset hiw-icon"></i>
-                    <h4>Foco na Conversação</h4>
-                    <p>Pratique a língua de forma real, com exercícios e diálogos que funcionam.</p>
-                </div>
-                <div class="hiw-card">
-                    <i class="fas fa-globe-americas hiw-icon"></i>
-                    <h4>Cultura e Interação</h4>
-                    <p>Aprenda a língua e mergulhe na rica cultura dos países hispânicos.</p>
-                </div>
-            </div>
-        </section>
+        <section class="how-it-works-section">
+            <div class="section-header">
+                <h3>Como Funciona</h3>
+                <p>Nossa metodologia é simples, dinâmica e adaptada para você.</p>
+            </div>
+            <div class="how-it-works-cards">
+                <div class="hiw-card">
+                    <i class="fas fa-chalkboard-teacher hiw-icon"></i>
+                    <h4>Aulas Personalizadas</h4>
+                    <p>Conteúdo feito sob medida para seus objetivos e estilo de aprendizado.</p>
+                </div>
+                <div class="hiw-card">
+                    <i class="fas fa-headset hiw-icon"></i>
+                    <h4>Foco na Conversação</h4>
+                    <p>Pratique a língua de forma real, com exercícios e diálogos que funcionam.</p>
+                </div>
+                <div class="hiw-card">
+                    <i class="fas fa-globe-americas hiw-icon"></i>
+                    <h4>Cultura e Interação</h4>
+                    <p>Aprenda a língua e mergulhe na rica cultura dos países hispânicos.</p>
+                </div>
+            </div>
+        </section>
 
-        <section class="testimonials-section">
-            <div class="section-header">
-                <h3>O que nossos alunos dizem</h3>
-            </div>
-            <div class="testimonials-container">
-                <div class="testimonial-card">
-                    <p>"As aulas da Luana são incríveis! Em pouco tempo já me sinto confiante para conversar."</p>
-                    <span>- Maria L.</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"A metodologia é leve e divertida, aprendi muito mais do que imaginava!"</p>
-                    <span>- João P.</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"O foco na cultura torna o aprendizado muito mais interessante. Recomendo!"</p>
-                    <span>- Ana C.</span>
-                </div>
-            </div>
-        </section>
+        <section class="testimonials-section">
+            <div class="section-header">
+                <h3>O que nossos alunos dizem</h3>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <p>"As aulas da Luana são incríveis! Em pouco tempo já me sinto confiante para conversar."</p>
+                    <span>- Maria L.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"A metodologia é leve e divertida, aprendi muito mais do que imaginava!"</p>
+                    <span>- João P.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"O foco na cultura torna o aprendizado muito mais interessante. Recomendo!"</p>
+                    <span>- Ana C.</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="platform-features-section">
+            <div class="section-header">
+                <h3>O que você encontra na plataforma</h3>
+                <p>Uma experiência de aprendizado completa com a ajuda da inteligência artificial.</p>
+            </div>
+            <div class="platform-features-container">
+                <div class="feature-card feature-highlight bg-yellow">
+                    <i class="fas fa-robot feature-icon"></i>
+                    <h4>IA para Ajustes e Feedback</h4>
+                    <p>Nossa inteligência artificial personaliza o seu caminho de aprendizado, sugerindo aulas ideais, e corrige seus exercícios com feedback inteligente.</p>
+                </div>
 
-        <div class="card">
-            <h2>Pronto para começar?</h2>
-            <p>Explore as aulas e pratique com nossos exercícios interativos. Ensinar espanhol é minha paixão. Com 7 anos de experiência, vejo como a língua pode transformar vidas e modificou a minha. O que me motiva é ver meus alunos ganhando confiança e se apaixonando pelo idioma.</p>
-        </div>
-    </main>
+                <div class="feature-card">
+                    <i class="fas fa-video feature-icon"></i>
+                    <h4>Vídeo Aulas de Apoio</h4>
+                    <p>Reforce o aprendizado com vídeos curtos e objetivos sobre tópicos específicos.</p>
+                </div>
 
-    <div id="bio-modal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <img src="{{ url_for('static', filename='imagens/imagem.jpeg') }}" alt="Luana Pereira" class="modal-profile-photo">
-            <h2>Professora Luana</h2>
-            <p>Meu nome é Luana Pereira e tenho contato com espanhol há 7 anos, ensinando de forma dinâmica e prática. Comigo, você vai aprender espanhol de forma divertida, focando no uso real do idioma e na cultura. Minha paixão é ver meus alunos ganhando confiança e se apaixonando pelo idioma!</p>
-        </div>
-    </div>
+                <div class="feature-card">
+                    <i class="fas fa-star feature-icon"></i>
+                    <h4>Atividades Extras</h4>
+                    <p>Materiais complementares, jogos e atividades para praticar o espanhol de forma interativa.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div id="login-modal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>Área do Aluno</h2>
-            <form id="login-form">
-                <div class="input-group">
-                    <label for="username">Nome de Usuário</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn-login">Logar</button>
-            </form>
-        </div>
-    </div>
+    <div id="bio-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img src="{{ url_for('static', filename='imagens/imagem.jpeg') }}" alt="Luana Pereira" class="modal-profile-photo">
+            <h2>Professora Luana</h2>
+            <p>Meu nome é Luana Pereira e tenho contato com espanhol há 7 anos, ensinando de forma dinâmica e prática. Comigo, você vai aprender espanhol de forma divertida, focando no uso real do idioma e na cultura. Minha paixão é ver meus alunos ganhando confiança e se apaixonando pelo idioma!</p>
+        </div>
+    </div>
 
-    <footer>
-        <p>Luana © 2025</p>
-    </footer>
+    <div id="registration-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Comece a Estudar</h2>
+            <form id="registration-form">
+                <div class="input-group">
+                    <label for="name">Nome*</label>
+                    <input type="text" id="name" name="name" placeholder="Ex: João" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">E-mail*</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Telefone*</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000" required>
+                </div>
+                <p class="required-fields">(*)Campos obrigatórios</p>
+                <div class="privacy-policy">
+                    <input type="checkbox" id="privacy-check" required>
+                    <label for="privacy-check">Declaro que li, entendi e estou de acordo com a <a href="#" class="privacy-link">política de privacidade</a>.</label>
+                </div>
+                <button type="submit" class="btn-submit-form">Começar a Estudar Espanhol</button>
+            </form>
+        </div>
+    </div>
 
-    <script>
-        // Lógica para abrir e fechar o modal de biografia
-        const openBioModalBtn = document.getElementById('open-bio-modal');
-        const bioModal = document.getElementById('bio-modal');
-        const closeBioBtn = bioModal.querySelector('.close-btn');
+    <footer>
+        <p>Luana © 2025</p>
+    </footer>
 
-        openBioModalBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            bioModal.style.display = 'flex';
-        });
+    <script>
+        // Lógica para abrir e fechar o modal de biografia
+        const openBioModalBtn = document.getElementById('open-bio-modal');
+        const bioModal = document.getElementById('bio-modal');
+        const closeBioBtn = bioModal.querySelector('.close-btn');
 
-        closeBioBtn.addEventListener('click', () => {
-            bioModal.style.display = 'none';
-        });
-        
-        // Lógica para abrir e fechar o NOVO modal de login (via botão na nav e no hero)
-        const openLoginModalBtnNav = document.getElementById('open-login-modal');
-        const openLoginModalBtnHero = document.getElementById('open-login-modal-hero');
-        const loginModal = document.getElementById('login-modal');
-        const closeLoginBtn = loginModal.querySelector('.close-btn');
+        openBioModalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            bioModal.style.display = 'flex';
+        });
 
-        const openLoginModal = (e) => {
-            e.preventDefault();
-            loginModal.style.display = 'flex';
-        };
+        closeBioBtn.addEventListener('click', () => {
+            bioModal.style.display = 'none';
+        });
+        
+        // Lógica para abrir e fechar o NOVO modal de registro (via botão na nav e no hero)
+        const openRegistrationModalBtnNav = document.getElementById('open-registration-modal-nav');
+        const openRegistrationModalBtnHero = document.getElementById('open-registration-modal-hero');
+        const registrationModal = document.getElementById('registration-modal');
+        const closeRegistrationBtn = registrationModal.querySelector('.close-btn');
 
-        openLoginModalBtnNav.addEventListener('click', openLoginModal);
-        openLoginModalBtnHero.addEventListener('click', openLoginModal);
+        const openRegistrationModal = (e) => {
+            e.preventDefault();
+            registrationModal.style.display = 'flex';
+        };
 
-        closeLoginBtn.addEventListener('click', () => {
-            loginModal.style.display = 'none';
-        });
+        openRegistrationModalBtnNav.addEventListener('click', openRegistrationModal);
+        openRegistrationModalBtnHero.addEventListener('click', openRegistrationModal);
 
-        // Fecha qualquer modal clicando fora dele
-        window.addEventListener('click', (e) => {
-            if (e.target === bioModal) {
-                bioModal.style.display = 'none';
-            }
-            if (e.target === loginModal) {
-                loginModal.style.display = 'none';
-            }
-        });
-    </script>
+        closeRegistrationBtn.addEventListener('click', () => {
+            registrationModal.style.display = 'none';
+        });
+
+        // Fecha qualquer modal clicando fora dele
+        window.addEventListener('click', (e) => {
+            if (e.target === bioModal) {
+                bioModal.style.display = 'none';
+            }
+            if (e.target === registrationModal) {
+                registrationModal.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

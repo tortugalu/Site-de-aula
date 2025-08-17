@@ -1,19 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-    --primary-color: #A2D2FF; /* Azul suave */
-    --secondary-color: #FADADD; /* Rosa suave */
+    --primary-color: #D8B4FF; /* Lilás */
+    --secondary-color: #FADADD; /* Rosa */
     --accent-color: #FFD6D6; /* Rosa claro para bordas/detalhes */
     --background-light: #FFF9E6; /* Amarelo pastel MUITO CLARO */
     --card-bg: #FFFFFF;
     --text-color: #555555; /* Cinza suave para texto escuro */
     --light-text-color: #FFFFFF; /* Branco para texto claro */
-
-    /* NOVAS CORES da barra de navegação */
     --nav-bg: #CDBEFC; /* Lilás suave */
     --nav-text: #FFFFFF; /* Branco para o texto da navegação */
     --cta-bg: #99C999; /* Verde pastel para o botão de CTA */
-
     --shadow-color: rgba(216, 180, 255, 0.5); /* Sombra lilás pastel */
     --dark-shadow-color: rgba(85, 85, 85, 0.1); /* Sombra cinza suave */
 }
@@ -94,7 +91,7 @@ body {
 }
 
 .btn-cta {
-    background-color: var(--background-light);
+    background-color: var(--card-bg);
     color: var(--text-color);
     padding: 15px 30px;
     border-radius: 50px;
@@ -178,6 +175,66 @@ body {
 .section-header h3 {
     font-size: 2em;
     font-weight: 700;
+    color: var(--text-color);
+}
+
+/* New: Platform Features Section */
+.platform-features-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.platform-features-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px var(--shadow-color);
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+    flex-grow: 1;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilo para o cartão de destaque da IA */
+.feature-highlight {
+    background-color: #99C999; /* Fundo VERDE PASTEL */
+    box-shadow: 0 8px 16px var(--shadow-color);
+    transform: scale(1.05);
+    max-width: 540px;
+}
+
+.feature-highlight:hover {
+    transform: scale(1.07) translateY(-5px);
+}
+
+.feature-highlight .feature-icon,
+.feature-highlight h4,
+.feature-highlight p {
+    color: var(--light-text-color); /* Texto branco */
+}
+
+.feature-icon {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.feature-card h4 {
+    margin: 0 0 10px 0;
+    font-weight: 600;
     color: var(--text-color);
 }
 
@@ -375,8 +432,12 @@ footer {
         font-size: 1.8em;
     }
     .how-it-works-cards,
-    .testimonials-container {
+    .testimonials-container,
+    .platform-features-container {
         flex-direction: column;
         align-items: center;
+    }
+    .feature-highlight {
+        transform: scale(1.05);
     }
 }
