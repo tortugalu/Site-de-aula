@@ -1,112 +1,268 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #D8B4FF; /* Lilás */
+    --secondary-color: #FADADD; /* Rosa */
+    --accent-color: #FFD6D6; /* Rosa claro para bordas/detalhes */
+    --background-light: #FFF9E6; /* Amarelo pastel MAIS CLARO */
+    --card-bg: #FFFFFF;
+    --text-color: #555555; /* Cinza suave para texto escuro */
+    --light-text-color: #FFFFFF; /* Branco para texto claro */
+    --nav-bg: #D8B4FF; /* Lilás para a barra de navegação */
+    --nav-text: #FFFFFF; /* Branco para o texto da navegação */
+    --shadow-color: rgba(216, 180, 255, 0.5); /* Sombra lilás pastel */
+    --dark-shadow-color: rgba(85, 85, 85, 0.1); /* Sombra cinza suave */
+}
 
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FFF3B0; /* amarelo pastel */
+    background-color: var(--background-light);
+    color: var(--text-color);
 }
 
-header {
-    background: linear-gradient(90deg, #FADADD, #A2D2FF); /* rosa -> azul */
-    color: white;
-    padding: 40px;
-    text-align: center;
-    font-size: 2.2em;
-    font-weight: 600;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* leve destaque no texto */
-}
-
-main {
-    padding: 40px 20px;
+/* Barra de Navegação */
+.navbar {
+    background-color: var(--nav-bg);
     display: flex;
-    flex-direction: column;
-    gap: 25px;
+    justify-content: space-between;
     align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.welcome-card, .info-card {
-    background-color: #FFF;
-    padding: 25px 30px;
+.logo h1 {
+    color: var(--nav-text);
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    color: var(--nav-text);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-item:hover {
+    color: var(--secondary-color);
+}
+
+.cta-button {
+    background-color: #8FD88F;
+    color: var(--text-color);
+    padding: 10px 15px;
     border-radius: 20px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    max-width: 600px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
 }
 
-.welcome-card:hover, .info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+.cta-button:hover {
+    background-color: #72C772;
+}
+
+/* Conteúdo Principal e Cards */
+main {
+    padding: 50px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px var(--shadow-color);
+    max-width: 650px;
+    text-align: center;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px var(--shadow-color);
 }
 
 .profile-photo {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 15px;
-    border: 4px solid #FFD6D6; /* borda delicada rosa */
+    margin-bottom: 20px;
+    border: 6px solid var(--accent-color);
+    box-shadow: 0 0 10px var(--dark-shadow-color);
 }
 
 h2 {
-    color: #4B4B4B;
+    color: var(--text-color);
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
 p {
     font-size: 1.1em;
-    color: #4B4B4B;
-    line-height: 1.5;
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
-/* Botão para mostrar metodologia */
-button {
-    background-color: #FFD6D6;
+/* Formulário de Login */
+.login-container {
+    max-width: 400px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.input-group input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Botões e Links */
+.btn-link, .btn-secondary, .btn-login {
+    display: inline-block;
+    padding: 14px 25px;
     border: none;
-    padding: 12px 20px;
     border-radius: 12px;
     font-size: 1em;
-    cursor: pointer;
     font-weight: 600;
-    transition: background 0.3s, transform 0.2s;
-    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+    color: var(--text-color);
 }
 
-button:hover {
+.btn-link {
+    background-color: var(--accent-color);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: var(--primary-color);
+}
+
+.btn-login {
+    background-color: var(--secondary-color);
+}
+
+.btn-link:hover {
     background-color: #FFB6B6;
     transform: translateY(-2px);
 }
 
+.btn-secondary:hover {
+    background-color: #B28FFC;
+    transform: translateY(-2px);
+}
+
+.btn-login:hover {
+    background-color: #F8BBBE;
+    transform: translateY(-2px);
+}
+
+/* Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(216, 180, 255, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.5s;
+}
+
+.close-btn {
+    color: #999;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--text-color);
+}
+
+.modal-profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--accent-color);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #D8B4FF; /* lilás pastel */
-    color: #2F2F2F;
+    padding: 25px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     font-weight: 500;
 }
 
-/* Responsividade básica */
+/* Responsividade */
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
     main {
-        padding: 20px 10px;
-    }
-
-    .welcome-card, .info-card {
-        padding: 20px;
-    }
-
-    h2 {
-        font-size: 1.6em;
-    }
-
-    p {
-        font-size: 1em;
-    }
-
-    .profile-photo {
-        width: 140px;
-        height: 140px;
+        padding: 30px 10px;
     }
 }

@@ -2,55 +2,101 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Aulas de Espanhol</title>
+    <title>Aulas de Espanhol | Luana Pereira</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Aulas de Espanhol particular!</h1>
-    </header>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Aula particular de espanhol</h1>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-item" id="open-login-modal">Área do Aluno</a>
+            <a href="/metodologia" class="nav-item">Metodologia</a>
+            <a href="#" class="nav-item" id="open-bio-modal">Professora Luana</a>
+            <a href="https://wa.me/SEU_NUMERO_AQUI" target="_blank" class="nav-item cta-button">
+                <i class="fab fa-whatsapp"></i> FALE COMIGO!
+            </a>
+        </div>
+    </nav>
 
     <main>
-        <div class="welcome-card">
-            <img src="{{ url_for('static', filename='imagens/imagem.jpeg') }}" alt="Luana Pereira" class="profile-photo">
-            <h2>Aprenda espanhol de forma divertida!</h2>
-            <p>Aqui você encontrará materiais, exercícios e dicas para evoluir rápido no idioma.</p>
-            <p>Meu nome é Luana Pereira e tenho contato com espanhol há 7 anos, ensinando de forma dinâmica e prática. Comigo, você vai aprender espanhol de forma divertida, focando no uso real do idioma e na cultura.</p>
-            
-            <!-- Botão que mostra o texto da metodologia -->
-            <button id="metodologia-btn">Aprender espanhol de forma divertida</button>
-            <p id="metodologia-text" style="display:none; margin-top:15px;">
-                Minha metodologia é totalmente personalizada, adaptando-se à sua idade, gosto e estilo de aprendizado. 
-                Não usamos apenas livros: os conteúdos e atividades são pensados de acordo com seus interesses, como filmes, músicas e livros. 
-                Tudo para tornar o aprendizado do espanhol leve, divertido e conectado à sua vida!
-            </p>
-        </div>
-
-        <div class="info-card">
+        <div class="card">
             <h2>Pronto para começar?</h2>
             <p>Explore as aulas e pratique com nossos exercícios interativos. Ensinar espanhol é minha paixão. Com 7 anos de experiência, vejo como a língua pode transformar vidas e modificou a minha. O que me motiva é ver meus alunos ganhando confiança e se apaixonando pelo idioma.</p>
         </div>
     </main>
+
+    <div id="bio-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img src="{{ url_for('static', filename='imagens/imagem.jpeg') }}" alt="Luana Pereira" class="modal-profile-photo">
+            <h2>Professora Luana</h2>
+            <p>Meu nome é Luana Pereira e tenho contato com espanhol há 7 anos, ensinando de forma dinâmica e prática. Comigo, você vai aprender espanhol de forma divertida, focando no uso real do idioma e na cultura. Minha paixão é ver meus alunos ganhando confiança e se apaixonando pelo idioma!</p>
+        </div>
+    </div>
+
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Área do Aluno</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Nome de Usuário</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn-login">Logar</button>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <p>Luana © 2025</p>
     </footer>
 
     <script>
-        // Função para mostrar/ocultar o texto da metodologia
-        const btn = document.getElementById('metodologia-btn');
-        const text = document.getElementById('metodologia-text');
+        // Lógica para abrir e fechar o modal de biografia
+        const openBioModalBtn = document.getElementById('open-bio-modal');
+        const bioModal = document.getElementById('bio-modal');
+        const closeBioBtn = bioModal.querySelector('.close-btn');
 
-        btn.addEventListener('click', () => {
-            if (text.style.display === 'none') {
-                text.style.display = 'block';
-                btn.textContent = 'Mostrar menos';
-            } else {
-                text.style.display = 'none';
-                btn.textContent = 'Aprender espanhol de forma divertida';
+        openBioModalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            bioModal.style.display = 'flex';
+        });
+
+        closeBioBtn.addEventListener('click', () => {
+            bioModal.style.display = 'none';
+        });
+        
+        // Lógica para abrir e fechar o NOVO modal de login
+        const openLoginModalBtn = document.getElementById('open-login-modal');
+        const loginModal = document.getElementById('login-modal');
+        const closeLoginBtn = loginModal.querySelector('.close-btn');
+
+        openLoginModalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginModal.style.display = 'flex';
+        });
+
+        closeLoginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+        });
+
+        // Fecha qualquer modal clicando fora dele
+        window.addEventListener('click', (e) => {
+            if (e.target === bioModal) {
+                bioModal.style.display = 'none';
+            }
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
             }
         });
     </script>
 </body>
 </html>
-
